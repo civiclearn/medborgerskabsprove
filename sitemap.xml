@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- ===============================
+       ROOT PAGES
+  ================================== -->
+  <url>
+    <loc>https://medborgerskabsprove.dk/</loc>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://medborgerskabsprove.dk/om-proven</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://medborgerskabsprove.dk/test-gratis</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://medborgerskabsprove.dk/find-dit-testcenter</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://medborgerskabsprove.dk/kontakt</loc>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://medborgerskabsprove.dk/handelsbetingelser</loc>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://medborgerskabsprove.dk/privatlivspolitik</loc>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://medborgerskabsprove.dk/cookiepolitik</loc>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://medborgerskabsprove.dk/refusioner</loc>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- ===============================
+       ARTICLES HUB
+  ================================== -->
+  <url>
+    <loc>https://medborgerskabsprove.dk/artikler</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- ===============================
+       ARTICLES
+  ================================== -->
+  <url>
+    <loc>https://medborgerskabsprove.dk/artikler/uddannelse-i-danmark</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://medborgerskabsprove.dk/artikler/danmarks-geografi</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://medborgerskabsprove.dk/artikler/dansk-kultur-vigtige-skikkelser</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://medborgerskabsprove.dk/artikler/det-danske-monarki</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://medborgerskabsprove.dk/artikler/privat-og-familielivet</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://medborgerskabsprove.dk/artikler/dagtilbud-i-danmark</loc>
+    <priority>0.7</priority>
+  </url>
+
+</urlset>
