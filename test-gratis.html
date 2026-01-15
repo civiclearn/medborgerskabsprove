@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gratis test – Medborgerskabsprøven | Medborgerskabsprove.com</title>
+  <!-- SEO -->
+<link rel="canonical" href="https://medborgerskabsprove.com/test-gratis.html" />
+
+<meta name="description"
+  content="Tag en gratis medborgerskabsprøve med 25 spørgsmål baseret på tidligere officielle prøver. 30 minutters tidsbegrænsning, automatisk bedømmelse og resultat som i den rigtige prøve. Perfekt til træning før permanent ophold." />
+
+<meta name="keywords"
+  content="gratis medborgerskabsprøve, gratis test medborgerskabsprøven, øve medborgerskabsprøve, medborgerskabsprøve spørgsmål, prøve permanent ophold, medborgerskabsprøve 25 spørgsmål, test Danmark" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Gratis test til Medborgerskabsprøven – 25 spørgsmål" />
+<meta property="og:description"
+  content="Prøv en gratis test med 25 spørgsmål fra tidligere officielle medborgerskabsprøver. 30 minutter, bestå/ikke bestå vurdering og komplet resultatvisning." />
+<meta property="og:url" content="https://medborgerskabsprove.com/test-gratis.html" />
+<meta property="og:image" content="https://medborgerskabsprove.com/assets/images/og-default.jpg" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Gratis test – Medborgerskabsprøven" />
+<meta name="twitter:description"
+  content="Øv dig med 25 realistiske spørgsmål og 30 minutters tidsbegrænsning. Få en ægte prøveoplevelse gratis." />
+<meta name="twitter:image" content="https://medborgerskabsprove.com/assets/images/og-default.jpg" />
+
+
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/shared.css">
+  <link rel="stylesheet" href="/assets/css/testpages.css">
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-left">
+      <a href="/index.html" class="brand-link">
+        <img src="/assets/images/dk.svg" alt="Danmark">
+        <div class="brand-title">Medborgerskabsprove.com</div>
+      </a>
+    </div>
+
+    <div class="header-center">
+      <nav class="header-nav">
+        <a href="/test-gratis.html">Gratis test</a>
+        <a href="/kontakt.html">Kontakt</a>
+		<a href="https://civiclearn.com/denmark-pr/login">Login</a>
+      </nav>
+    </div>
+
+    <div class="header-right">
+      <div class="brand-powered">
+        drevet af <span>CivicLearn</span>
+      </div>
+      <a href="https://civiclearn.com/denmark-pr/checkout.html" class="btn-small-purple">Få fuld adgang</a>
+    </div>
+  </div>
+</header>
+
+<!-- MAIN -->
+<main>
+
+  <div class="test-header">
+    <div>
+      <div class="badge">Gratis test – 25 spørgsmål</div>
+      <div class="progress" id="progressLabel">Spørgsmål 1 af 25 · Point 0</div>
+    </div>
+    <div class="timer badge" id="timer">30:00</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-title" id="qTitle">…</div>
+    <div class="choices" id="choices"></div>
+
+    <div class="controls">
+      <button class="btn secondary" id="btnPrev" disabled>← Forrige</button>
+      <button class="btn" id="btnNext" disabled>Næste →</button>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="resultPanel" class="result-panel" style="display:none;">
+    <h2>Testresultat</h2>
+    <div id="gradeStamp" class="result-stamp"></div>
+    <p id="resultText" class="result-text"></p>
+
+    <div class="result-chart-container">
+      <canvas id="resultChart"></canvas>
+    </div>
+
+    <div class="cta">
+      <a href="https://civiclearn.com/denmark-pr/checkout.html" class="btn">
+        Få fuld adgang til alle prøver
+      </a>
+    </div>
+  </div>
+</main>
+
+<footer class="cl-footer">
+  <div class="cl-footer-inner">
+    © 2025 <span class="cl-footer-brand">CivicLearn</span> — Alle rettigheder forbeholdes.
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- JAVASCRIPT – fast prøve med 25 spørgsmål (DK) -->
+<script>
+// Fast sæt af 25 spørgsmål (fra din CSV); første svar i hver liste er det korrekte
+const QUESTIONS = [
+  {
+    q: "Kan to personer fra to forskellige trossamfund blive gift i folkekirken?",
+    a: [
+      "Ja, hvis den ene person er medlem af folkekirken",
+      "Nej, begge personer skal være medlem af folkekirken"
+    ]
+  },
+  {
+    q: "Skal Folketingets medlemmer være medlem af et politisk parti?",
+    a: [
+      "Nej",
+      "Ja"
+    ]
+  },
+  {
+    q: "Hvor ligger Danmarks tredjestørste by, Odense?",
+    a: [
+      "På Fyn",
+      "På Sjælland",
+      "I Jylland"
+    ]
+  },
+  {
+    q: "Hvor mange regioner er der i Danmark?",
+    a: [
+      "5",
+      "3",
+      "7"
+    ]
+  },
+  {
+    q: "Hvor højt er det højeste naturlige punkt i det danske landskab?",
+    a: [
+      "Ca. 170 meter",
+      "Ca. 360 meter",
+      "Ca. 550 meter"
+    ]
+  },
+  {
+    q: "Hvem har den lovgivende magt?",
+    a: [
+      "Regeringen og Folketinget",
+      "Folketinget og domstolene"
+    ]
+  },
+  {
+    q: "Hvor gammel skal man være for at blive gift i Danmark?",
+    a: [
+      "Mindst 18 år",
+      "Mindst 15 år",
+      "Mindst 21 år"
+    ]
+  },
+  {
+    q: "Hvad er Karen Blixen især kendt for?",
+    a: [
+      "Hun skrev bøger",
+      "Hun lavede billedkunst",
+      "Hun spillede teater"
+    ]
+  },
+  {
+    q: "Hvornår blev protestantismen indført i Danmark?",
+    a: [
+      "I 1500-tallet",
+      "I 1100-tallet",
+      "I 1300-tallet"
+    ]
+  },
+  {
+    q: "Hvad hedder farvandet mellem Fyn og Sjælland?",
+    a: [
+      "Storebælt",
+      "Øresund",
+      "Lillebælt"
+    ]
+  },
+  {
+    q: "Hvem har den dømmende magt?",
+    a: [
+      "Domstolene",
+      "Folketinget",
+      "Regeringen"
+    ]
+  },
+  {
+    q: "Hvad er P.S. Krøyer særlig kendt for?",
+    a: [
+      "Han var kunstmaler",
+      "Han var videnskabsmand",
+      "Han var politiker"
+    ]
+  },
+  {
+    q: "Skal man være medlem af folkekirken for at blive begravet på en af folkekirkens kirkegårde?",
+    a: [
+      "Nej",
+      "Ja"
+    ]
+  },
+  {
+    q: "For hvilken film vandt Thomas Vinterberg en Oscar i 2021?",
+    a: [
+      "Druk",
+      "Pelle Erobreren",
+      "Kundskabens Træ"
+    ]
+  },
+  {
+    q: "Hvem er ikke med i det danske rigsfællesskab?",
+    a: [
+      "Island",
+      "Færøerne",
+      "Grønland"
+    ]
+  },
+  {
+    q: "På hvilken ø ligger Danmarks sydligste punkt?",
+    a: [
+      "Falster",
+      "Læsø",
+      "Samsø"
+    ]
+  },
+  {
+    q: "Hvad var Søren Kierkegaard (1813-1855) særligt kendt for?",
+    a: [
+      "Han var filosof",
+      "Han var kunstmaler",
+      "Han var politiker"
+    ]
+  },
+  {
+    q: "Må en arbejdsgiver fyre en kvinde, fordi hun er gravid?",
+    a: [
+      "Nej",
+      "Ja"
+    ]
+  },
+  {
+    q: "Hvilket af følgende områder har kommunerne ansvaret for?",
+    a: [
+      "Børnehaver",
+      "Sygehuse",
+      "Politiet"
+    ]
+  },
+  {
+    q: "Hvad fremstiller den danske virksomhed LEGO?",
+    a: [
+      "Legetøj",
+      "Insulin",
+      "Vindmøller"
+    ]
+  },
+  {
+    q: "Hvilket år blev Danmark besat af tyske tropper?",
+    a: [
+      "1940",
+      "1935",
+      "1945"
+    ]
+  },
+  {
+    q: "Hvornår er man ifølge loven myndig i Danmark?",
+    a: [
+      "Når man fylder 18 år",
+      "Når man fylder 15 år",
+      "Når man fylder 21 år"
+    ]
+  },
+  {
+    q: "Skal politiet normalt give tilladelse til, at man afholder en demonstration?",
+    a: [
+      "Nej",
+      "Ja"
+    ]
+  },
+  {
+    q: "Hvad var Yahya Hassan særligt kendt for?",
+    a: [
+      "Han var digter",
+      "Han var skuespiller",
+      "Han var fodboldspiller"
+    ]
+  },
+  {
+    q: "I hvilken type institution går børn typisk, når de er fire år",
+    a: [
+      "Børnehave",
+      "Vuggestue"
+    ]
+  }
+];
+
+function shuffle(arr) {
+  const a = arr.slice();
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+// Model med korrekt svar markeret, men valgmulighederne blandes
+const model = QUESTIONS.map((item, idx) => {
+  const correct = item.a[0];
+  const shuffled = shuffle(item.a);
+  return {
+    index: idx,
+    text: item.q,
+    choices: shuffled.map(opt => ({ text: opt, isCorrect: opt === correct })),
+    answered: false,
+    pickedIndex: -1
+  };
+});
+
+const qTitle = document.getElementById('qTitle');
+const choicesEl = document.getElementById('choices');
+const btnPrev = document.getElementById('btnPrev');
+const btnNext = document.getElementById('btnNext');
+const progressLabel = document.getElementById('progressLabel');
+const resultPanel = document.getElementById('resultPanel');
+const gradeStamp = document.getElementById('gradeStamp');
+const resultText = document.getElementById('resultText');
+const timerEl = document.getElementById('timer');
+
+let qi = 0, score = 0;
+const total = model.length;
+
+// 30 minutter (officiel prøve)
+let timerSec = 30 * 60;
+
+const timerInt = setInterval(() => {
+  timerSec--;
+  if (timerSec < 0) {
+    clearInterval(timerInt);
+    finishTest();
+    return;
+  }
+  const m = Math.floor(timerSec / 60).toString().padStart(2, '0');
+  const s = (timerSec % 60).toString().padStart(2, '0');
+  timerEl.textContent = `${m}:${s}`;
+}, 1000);
+
+function renderQuestion() {
+  const q = model[qi];
+  qTitle.textContent = q.text;
+  choicesEl.innerHTML = '';
+  q.choices.forEach((c, idx) => {
+    const btn = document.createElement('button');
+    btn.className = 'choice' + (q.answered ? ' disabled' : '');
+    btn.textContent = c.text;
+    btn.addEventListener('click', () => pick(idx));
+    choicesEl.appendChild(btn);
+  });
+
+  btnPrev.disabled = (qi === 0);
+  btnNext.disabled = !q.answered;
+
+  progressLabel.textContent = `Spørgsmål ${qi + 1} af ${total} · Point ${score}`;
+
+  if (q.answered) applyRevealStyles();
+
+  if (qi === total - 1) btnNext.textContent = "Se resultat →";
+  else btnNext.textContent = "Næste →";
+}
+
+function pick(idx) {
+  const q = model[qi];
+  if (q.answered) return;
+
+  q.answered = true;
+  q.pickedIndex = idx;
+
+  if (q.choices[idx].isCorrect) score++;
+
+  applyRevealStyles();
+
+  btnNext.disabled = false;
+  progressLabel.textContent = `Spørgsmål ${qi + 1} af ${total} · Point ${score}`;
+
+  if (qi === total - 1) btnNext.textContent = "Se resultat →";
+}
+
+function applyRevealStyles() {
+  const q = model[qi];
+  const buttons = choicesEl.querySelectorAll('.choice');
+  buttons.forEach((b, i) => {
+    b.classList.add('disabled');
+    if (q.choices[i].isCorrect) b.classList.add('correct');
+    if (q.pickedIndex === i && !q.choices[i].isCorrect) b.classList.add('wrong');
+  });
+}
+
+btnNext.addEventListener('click', () => {
+  if (qi < total - 1) {
+    qi++;
+    renderQuestion();
+  } else {
+    finishTest();
+  }
+});
+
+btnPrev.addEventListener('click', () => {
+  if (qi > 0) {
+    qi--;
+    renderQuestion();
+  }
+});
+
+function finishTest() {
+  clearInterval(timerInt);
+  document.querySelector('.question-card').style.display = 'none';
+  resultPanel.style.display = 'block';
+
+  const wrong = total - score;
+
+  // Officiel grænse: 20/25 for bestået
+  const pass = score >= 20;
+
+  gradeStamp.textContent = pass ? "Bestået!" : "Ikke bestået";
+  gradeStamp.className = "result-stamp " + (pass ? "pass" : "fail");
+
+  resultText.textContent =
+    `Slutscore: ${score} / ${total} (${Math.round(score / total * 100)} %). ` +
+    `Korrekte svar: ${score}. Forkerte svar: ${wrong}.`;
+
+  renderChart(score, wrong);
+}
+
+function renderChart(correct, wrong) {
+  const ctx = document.getElementById('resultChart').getContext('2d');
+  new Chart(ctx, {
+    type: 'pie',
+    data: {
+      labels: ['Korrekte', 'Forkerte'],
+      datasets: [{ data: [correct, wrong] }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { position: 'bottom' },
+        title: { display: true, text: 'Fordeling af svar' }
+      }
+    }
+  });
+}
+
+renderQuestion();
+</script>
+
+</body>
+</html>

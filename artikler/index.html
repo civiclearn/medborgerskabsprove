@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <!-- SEO FOR HUB PAGE -->
+  <title>Artikler – Forberedelse til medborgerskabsprøven</title>
+
+  <meta name="description"
+        content="Dybdegående artikler om geografi, kultur, monarki, uddannelse, dagtilbud og familieliv. Perfekt til effektiv forberedelse til medborgerskabsprøven.">
+
+  <link rel="canonical" href="https://medborgerskabsprove.com/artikler/index.html">
+
+  <!-- OG -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Artikler – Forberedelse til medborgerskabsprøven">
+  <meta property="og:description" content="Læs vores komplette samling af artikler målrettet medborgerskabsprøven i Danmark.">
+  <meta property="og:image" content="https://medborgerskabsprove.com/assets/images/articles/hero-articles.webp">
+  <meta property="og:url" content="https://medborgerskabsprove.com/artikler/index.html">
+  <meta property="og:site_name" content="Medborgerskabsprove.com">
+
+  <!-- TWITTER -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Artikler – Forberedelse til medborgerskabsprøven">
+  <meta name="twitter:description" content="En struktureret samling af artikler til medborgerskabsprøven.">
+  <meta name="twitter:image" content="https://medborgerskabsprove.com/assets/images/articles/hero-articles.webp">
+
+  <link rel="stylesheet" href="/assets/css/shared.css">
+  <link rel="stylesheet" href="/assets/css/blog.css">
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+
+    <div class="header-left">
+      <a href="/index.html" class="brand-link">
+        <img src="/assets/images/dk.svg" alt="Danmark">
+        <div class="brand-title">Medborgerskabsprove.com</div>
+      </a>
+    </div>
+
+    <div class="header-center">
+      <nav class="header-nav">
+        <a href="/om-proven.html">Om prøven</a>
+        <a href="/test-gratis.html">Gratis test</a>
+        <a href="/kontakt.html">Kontakt</a>
+		<a href="https://civiclearn.com/denmark-pr/login">Login</a>
+      </nav>
+    </div>
+
+    <div class="header-right">
+      <div class="brand-powered">drevet af <span>CivicLearn</span></div>
+      <a href="https://civiclearn.com/denmark-pr/checkout.html" class="btn-small-purple">Tilmelding</a>
+    </div>
+
+  </div>
+</header>
+
+<!-- HERO SECTION -->
+<section class="articles-hero">
+  <h1>Artikler til medborgerskabsprøven</h1>
+  <p class="articles-hero-subtitle">
+    Faglige og præcise artikler, der dækker centrale emner i medborgerskabsprøven: geografi, kultur, monarki, uddannelse, dagtilbud og familieliv.
+  </p>
+  <a href="https://civiclearn.com/denmark-pr/checkout.html" class="cta-purple">Start din træning</a>
+</section>
+
+<!-- FEATURED ARTICLE (DYNAMIC) -->
+<section class="featured-article">
+  <h2>Fremhævet artikel</h2>
+
+  <a id="featured-card" class="featured-card" href="#">
+    <div class="featured-card-image">
+      <img id="featured-image" src="" alt="">
+    </div>
+    <div class="featured-card-content">
+      <h3 id="featured-title"></h3>
+      <p id="featured-desc"></p>
+      <span class="featured-read-more">Læs artiklen →</span>
+    </div>
+  </a>
+</section>
+
+
+<!-- GRID OF ALL ARTICLES -->
+
+<section class="articles-grid-section">
+  <h2>Alle artikler</h2>
+  <div class="articles-grid" id="articlesGrid"></div>
+</section>
+
+<!-- CTA BOTTOM -->
+<section class="articles-cta-bottom">
+  <h3>Vil du bestå medborgerskabsprøven første gang?</h3>
+  <p>Tag fulde øveprøver, se statistik, og træn alle temaer målrettet.</p>
+  <a href="https://civiclearn.com/denmark-pr/checkout.html" class="cta-purple">Få fuld adgang</a>
+</section>
+
+<footer class="cl-footer">
+  <div class="cl-footer-inner">
+    © <span id="footer-year"></span> 
+    <span class="cl-footer-brand">CivicLearn</span> by Testrada — Alle rettigheder forbeholdes.
+  </div>
+</footer>
+<script>
+(async function () {
+  const res = await fetch('/artikler/articles.json');
+  const all = await res.json();
+
+  // Daily rotation based on date
+  const dayIndex = Math.floor(Date.now() / (1000 * 60 * 60 * 24));
+  const index = dayIndex % all.length;
+  const a = all[index];
+
+  // Inject into featured card
+  document.getElementById("featured-card").href = a.url;
+  document.getElementById("featured-image").src = a.image;
+  document.getElementById("featured-image").alt = a.title;
+  document.getElementById("featured-title").textContent = a.title;
+  document.getElementById("featured-desc").textContent = a.desc;
+})();
+</script>
+
+<script>
+(async function () {
+  const grid = document.getElementById("articlesGrid");
+  if (!grid) return;
+
+  const res = await fetch('/artikler/articles.json');
+  const all = await res.json();
+
+  // Sort alphabetically (optional)
+  all.sort((a, b) => a.title.localeCompare(b.title));
+
+  grid.innerHTML = all.map(a => `
+    <a href="${a.url}" class="blog-card">
+      <img src="${a.image}" alt="${a.title}">
+      <div class="blog-card-body">
+        <h3>${a.title}</h3>
+        <p>${a.desc}</p>
+      </div>
+    </a>
+  `).join('');
+})();
+</script>
+
+<script>
+  document.getElementById("footer-year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

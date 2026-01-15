@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Danmarks geografi",
+    "desc": "Landsdele, øer og farvande – alt du skal kunne.",
+    "url": "/artikler/danmarks-geografi.html",
+    "image": "/assets/images/articles/danmarks-geografi.webp"
+  },
+  {
+    "title": "Det danske monarki",
+    "desc": "Kongens rolle, arvefølge og symboler.",
+    "url": "/artikler/det-danske-monarki.html",
+    "image": "/assets/images/articles/det-danske-monarki.webp"
+  },
+  {
+    "title": "Uddannelse i Danmark",
+    "desc": "Ungdomsuddannelser, videregående uddannelser, SU.",
+    "url": "/artikler/uddannelse-i-danmark.html",
+    "image": "/assets/images/articles/uddannelse-i-danmark.webp"
+  },
+  {
+    "title": "Dagtilbud i Danmark",
+    "desc": "Vuggestue, dagpleje, børnehave og SFO.",
+    "url": "/artikler/dagtilbud-i-danmark.html",
+    "image": "/assets/images/articles/dagtilbud-i-danmark.webp"
+  },
+  {
+    "title": "Privat- og familielivet",
+    "desc": "Rettigheder, ligestilling og forældremyndighed.",
+    "url": "/artikler/privat-og-familielivet.html",
+    "image": "/assets/images/articles/privat-og-familielivet.webp"
+  }
+]
