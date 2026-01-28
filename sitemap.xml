@@ -89,5 +89,10 @@
     <loc>https://medborgerskabsprove.dk/artikler/dagtilbud-i-danmark</loc>
     <priority>0.7</priority>
   </url>
+  
+   <url>
+    <loc>https://medborgerskabsprove.dk/artikler/medborgerskabsprove-2026-ru</loc>
+    <priority>0.7</priority>
+  </url>
 
 </urlset>
