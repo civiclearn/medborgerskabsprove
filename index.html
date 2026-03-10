@@ -60,18 +60,21 @@
   <style>
     /* ── Bundle upsell strip ── */
     .bundle-strip {
-      margin-top: 20px;
-      background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%);
-      border: 1.5px solid #ddd6fe;
-      border-radius: 10px;
-      padding: 14px 18px;
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      cursor: pointer;
-      text-decoration: none;
-      transition: background 0.15s, box-shadow 0.15s;
-    }
+  margin-top: 0; 
+  background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%);
+  border: 1.5px solid #ddd6fe;
+  /* UPDATED: Top corners straight, bottom corners rounded */
+  border-radius: 0 0 10px 10px; 
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.15s, box-shadow 0.15s;
+  /* OPTIONAL: Remove the top border so there isn't a double line where they meet */
+  border-top: none; 
+}
     .bundle-strip:hover {
       background: linear-gradient(135deg, #ede9fe 0%, #e0dbff 100%);
       box-shadow: 0 4px 16px rgba(107, 78, 255, 0.12);

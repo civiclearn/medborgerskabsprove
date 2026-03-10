@@ -755,16 +755,16 @@ section {
 /* CTA */
 .pricing-cta {
   display: block;
-  width: 100%;
-  background: #7c3aed;
+  text-align: center;
+  background: #6b4eff;
   color: #fff;
-  padding: 1.15rem;
+  padding: 16px;
+  /* UPDATED: Top corners rounded, bottom corners straight */
+  border-radius: 10px 10px 0 0; 
+  font-weight: 700;
   text-decoration: none;
-  margin-top: 1.8rem;
-  font-size: 1.05rem;
-  font-weight: 600;
-  border-radius: 0 0 1.6rem 1.6rem !important;
-  transition: background 0.2s ease;
+  margin-top: 20px;
+  transition: background 0.2s;
 }
 
 .pricing-cta:hover {
