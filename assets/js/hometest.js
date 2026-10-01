@@ -272,7 +272,6 @@ function createEndCard() {
     <p>Du har gennemført de gratis spørgsmål.  
     Få adgang til <strong>hundredvis af officielle spørgsmål</strong>, fulde simulationer og detaljerede forklaringer.</p>
     <a href="https://civiclearn.com/denmark-pr/checkout.html" class="hero-primary-btn">Få fuld adgang</a>
-    <p class="wc-curious" style="margin-top:0.9rem;font-size:0.85rem;line-height:1.45;text-align:center;"><a href="https://civiclearn.com/insights/hardest-citizenship-questions?utm_source=medborgerskabsprove-home&amp;utm_medium=free-test&amp;utm_campaign=world-challenge" target="_blank" rel="noopener" style="color:inherit;opacity:0.75;text-decoration:underline;text-underline-offset:2px;">Bare nysgerrig? Prøv verdens sværeste statsborgerskabsspørgsmål (på engelsk) →</a></p>
   `;
 
   return card;
