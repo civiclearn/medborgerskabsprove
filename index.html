@@ -63,6 +63,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="/assets/css/newhome.css">
+  <link rel="stylesheet" href="https://civiclearn.com/assets/css/presale-home.css?v=2">
   <style>
     /* ── Bundle upsell strip ── */
     .bundle-strip {
@@ -220,31 +221,38 @@
 <body>
 
 <!-- HEADER -->
-<header class="cl-header">
-  <div class="cl-header-inner">
+<header class="hdr" id="hdr">
+  <div class="wrap hdr-in">
+    <a href="/" class="logo logo-long"><img alt="DK" src="/assets/images/dk.svg"/><span>Medborgerskabsprove.dk</span></a>
 
-    <a href="/" class="cl-logo">
-      <img src="/assets/images/dk.svg" alt="DK" />
-      <span>Medborgerskabsprove.dk</span>
-    </a>
+    <button class="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-nav"
+      onclick="var o=document.getElementById('hdr').classList.toggle('menu-open');this.setAttribute('aria-expanded',o)">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
 
-    <nav class="cl-nav">
+    <nav class="nav" id="site-nav">
       <a href="/test-gratis.html">Gratis test</a>
       <a href="/artikler/index.html">Artikler</a>
       <a href="/kontakt.html">Kontakt</a>
-	  <a href="https://civiclearn.com/denmark-pr/login">Login</a>
+      <a href="https://civiclearn.com/denmark-pr/login">Login</a>
     </nav>
 
-    <div class="cl-right">
-      <div class="cl-powered">
-        drevet af <span>CivicLearn</span>
+    <div class="hdr-right">
+      <div class="powered">
+        <div>drevet af <b>CivicLearn</b></div>
+        <a class="tp" href="https://www.trustpilot.com/review/civiclearn.com" target="_blank" rel="noopener" aria-label="CivicLearn på Trustpilot: 4,5 ud af 5">
+          <span class="tp-stars" aria-hidden="true">
+            <svg viewBox="0 0 25 25"><rect width="25" height="25" fill="#00b67a"/><path fill="#fff" d="M12.5 4.3l2.1 5.1 5.5.4-4.2 3.6 1.3 5.4-4.7-3-4.7 3 1.3-5.4-4.2-3.6 5.5-.4z"/></svg>
+            <svg viewBox="0 0 25 25"><rect width="25" height="25" fill="#00b67a"/><path fill="#fff" d="M12.5 4.3l2.1 5.1 5.5.4-4.2 3.6 1.3 5.4-4.7-3-4.7 3 1.3-5.4-4.2-3.6 5.5-.4z"/></svg>
+            <svg viewBox="0 0 25 25"><rect width="25" height="25" fill="#00b67a"/><path fill="#fff" d="M12.5 4.3l2.1 5.1 5.5.4-4.2 3.6 1.3 5.4-4.7-3-4.7 3 1.3-5.4-4.2-3.6 5.5-.4z"/></svg>
+            <svg viewBox="0 0 25 25"><rect width="25" height="25" fill="#00b67a"/><path fill="#fff" d="M12.5 4.3l2.1 5.1 5.5.4-4.2 3.6 1.3 5.4-4.7-3-4.7 3 1.3-5.4-4.2-3.6 5.5-.4z"/></svg>
+            <svg viewBox="0 0 25 25"><rect width="12.5" height="25" fill="#00b67a"/><rect x="12.5" width="12.5" height="25" fill="#dcdce6"/><path fill="#fff" d="M12.5 4.3l2.1 5.1 5.5.4-4.2 3.6 1.3 5.4-4.7-3-4.7 3 1.3-5.4-4.2-3.6 5.5-.4z"/></svg>
+          </span>
+          <span class="tp-word">Trustpilot</span>
+        </a>
       </div>
-
-      <a href="https://civiclearn.com/denmark-pr/checkout.html" class="cl-btn">
-        Tilmelding
-      </a>
+      <a href="https://civiclearn.com/denmark-pr/checkout.html" class="btn btn-primary">Tilmelding</a>
     </div>
-
   </div>
 </header>
 
@@ -252,77 +260,57 @@
 
 <!-- HERO -->
 <section class="hero">
-
-  <!-- EXAM STATUS BAR (PART OF HERO) -->
-  <section class="exam-status">
-    <div class="exam-status-inner">
-
-      <!-- NEXT TEST -->
-      <div class="exam-status-row">
-        <div class="exam-status-counter" data-date="2026-06-03">
-          <span class="count-number">19</span>
-          <span class="count-unit">DAGE</span>
-        </div>
-
-        <div class="exam-status-text">
-          <p class="exam-status-sentence">
+  <div class="wrap hero-grid">
+    <div>
+      <section class="exam-status">
+<div class="exam-status-inner">
+<!-- NEXT TEST -->
+<div class="exam-status-row">
+<div class="exam-status-counter" data-date="2026-06-03">
+<span class="count-number">19</span>
+<span class="count-unit">DAGE</span>
+</div>
+<div class="exam-status-text">
+<p class="exam-status-sentence">
             Den næste medborgerskabsprøve afholdes
             <strong>den 3. juni 2026</strong>.
             <span class="status-pill">Tilmelding lukket</span>
-          </p>
-        </div>
-      </div>
-
-      <!-- REGISTRATION DEADLINE / SECONDARY -->
-      <div class="exam-status-row exam-status-row--registration">
-        <div class="exam-status-counter" data-date="2026-11-25">
-          <span class="count-number"></span>
-          <span class="count-unit">DAGE</span>
-        </div>
-
-        <div class="exam-status-text">
-          <p class="exam-status-sentence">
+</p>
+</div>
+</div>
+<!-- REGISTRATION DEADLINE / SECONDARY -->
+<div class="exam-status-row exam-status-row--registration">
+<div class="exam-status-counter" data-date="2026-11-25">
+<span class="count-number"></span>
+<span class="count-unit">DAGE</span>
+</div>
+<div class="exam-status-text">
+<p class="exam-status-sentence">
             Den efterfølgende medborgerskabsprøve afholdes
             <strong>den 25. november 2026</strong>.
           </p>
-        </div>
+</div>
+</div>
+</div>
+</section>
+      
+      <span class="kicker">Komplett forberedelse til medborgerskabsprøven</span>
+      <h1><span>Medborgerskabsprøven i Danmark:</span> Forbered dig online – enkelt og effektivt.</h1>
+      <p class="hero-sub">Spørgsmål baseret på det officielle indhold og de emner, der kræves til medborgerskabsprøven (nødvendig for permanent opholdstilladelse i Danmark).</p>
+      <div class="hero-ctas">
+        <a href="https://civiclearn.com/denmark-pr/checkout.html" class="btn btn-primary" id="hero-cta">Start forberedelsen</a>
+        <a href="#questions-demo" class="btn btn-ghost">Se eksempelspørgsmål</a>
       </div>
-
+      <p class="hero-meta" id="v2Meta"><strong>499 kr, engangsbetaling</strong> · livstidsadgang · intet abonnement</p>
+      <div class="rating">
+        <span class="stars" aria-hidden="true">★★★★★</span>
+        <strong>Fremragende</strong>
+        <span>Baseret på over 1.600 verificerede anmeldelser siden 2015.</span>
+      </div>
     </div>
-  </section>
-
-  <div class="hero-center hero-center--spaced">
-
-    <div class="hero-kicker">
-      <div class="hero-kicker-dot"></div>
-      Komplett forberedelse til medborgerskabsprøven
-    </div>
-
-    <h1 class="hero-title">
-      <span>Medborgerskabsprøven i Danmark:</span>
-      Forbered dig online – enkelt og effektivt.
-    </h1>
-
-    <p class="hero-subtitle">
-      Spørgsmål baseret på det officielle indhold og de emner, der kræves til medborgerskabsprøven  
-      (nødvendig for permanent opholdstilladelse i Danmark).
-    </p>
-
-    <div class="hero-actions">
-      <a href="https://civiclearn.com/denmark-pr/checkout.html" class="hero-primary-btn">Start forberedelsen</a>
-      <a href="#questions-demo" class="hero-secondary-btn">Se eksempelspørgsmål</a>
-    </div>
-
-    <div class="hero-social">
-      <span class="rating-stars">★★★★★</span>
-      <span class="rating-word">Fremragende</span>
-      <span class="rating-subtext">Baseret på over 1.600 verificerede anmeldelser siden 2015.</span>
-    </div>
-
-    <div class="hero-image-wide">
+    <div class="hero-img">
       <img src="/assets/images/devices-dkpr-v3.webp" alt="CivicLearn Medborgerskabsprøven: dashboard med estimeret score og hurtig test på computer og iPhone, sammen med det officielle læremateriale" width="1920" height="1091" fetchpriority="high" decoding="async">
     </div>
-
   </div>
 </section>
 
@@ -343,267 +331,192 @@
 
 
 <!-- FEATURES SECTION -->
-<section>
-  <div class="section-heading">
-    <div class="section-kicker">Struktureret forberedelse</div>
-    <h2 class="section-title">Alt hvad du behøver for at bestå</h2>
-    <p class="section-lead">Interaktive tests, tidtagne prøver og nemme forklaringer.</p>
+<section class="section feat-v2">
+  <div class="wrap">
+    <div class="section-head"><span class="kicker">Struktureret forberedelse</span><h2>Alt hvad du behøver for at bestå</h2><p>Interaktive tests, tidtagne prøver og nemme forklaringer.</p></div>
+    <div class="features">
+      <div class="feature">
+        <img src="/assets/images/icons/1.svg" alt="">
+        <h3>Officielt indhold</h3>
+        <p>Spørgsmål baseret på de centrale temaer i medborgerskabsprøven: historie, samfund, værdier og danske forhold.</p>
+        <a class="feat-link" href="/om-proven.html">Læs om prøven <span class="arrow">›</span></a>
+      </div>
+      <div class="feature">
+        <img src="/assets/images/icons/2.svg" alt="">
+        <h3>Simulerede prøver</h3>
+        <p>Tidtagne tests, øjeblikkelige svar og detaljerede forklaringer, så du kan forstå dine fejl, styrke dine svage områder og følge din udvikling over tid.</p>
+        <a class="feat-link" href="/test-gratis.html">Tag en gratis prøve <span class="arrow">›</span></a>
+      </div>
+      <div class="feature">
+        <img src="/assets/images/icons/3.svg" alt="">
+        <h3>Tryghed på dagen</h3>
+        <p>Træn de vigtigste temaer i dit eget tempo, få ro på nerverne og mød op til prøven med selvtillid – helt klar til at bestå ved første forsøg.</p>
+        <a class="feat-link" href="/find-dit-testcenter.html">Find dit testcenter <span class="arrow">›</span></a>
+      </div>
+    </div>
   </div>
-
-<div class="features-grid">
-
-  <div class="feature-card" onclick="location.href='/om-proven.html'">
-    <a href="/om-proven.html" class="feature-card-link">
-      <div class="feature-icon"><img src="/assets/images/icons/1.svg"></div>
-      <h3 class="feature-title">Officielt indhold</h3>
-      <p class="feature-text">
-        Spørgsmål baseret på de centrale temaer i medborgerskabsprøven: historie, samfund,
-        værdier og danske forhold.
-      </p>
-      <div class="feature-cta">Læs om prøven <span class="arrow">›</span></div>
-    </a>
-  </div>
-
-  <div class="feature-card" onclick="location.href='/test-gratis.html'">
-    <a href="/test-gratis.html" class="feature-card-link">
-      <div class="feature-icon"><img src="/assets/images/icons/2.svg"></div>
-      <h3 class="feature-title">Simulerede prøver</h3>
-      <p class="feature-text">
-        Tidtagne tests, øjeblikkelige svar og detaljerede forklaringer, så du kan forstå dine fejl, styrke dine svage områder og følge din udvikling over tid.
-      </p>
-      <div class="feature-cta">Tag en gratis prøve <span class="arrow">›</span></div>
-    </a>
-  </div>
-
-  <div class="feature-card" onclick="location.href='/find-dit-testcenter.html'">
-    <a href="/find-dit-testcenter.html" class="feature-card-link">
-      <div class="feature-icon"><img src="/assets/images/icons/3.svg"></div>
-      <h3 class="feature-title">Tryghed på dagen</h3>
-      <p class="feature-text">
-        Træn de vigtigste temaer i dit eget tempo, få ro på nerverne og mød op til prøven med selvtillid – helt klar til at bestå ved første forsøg.
-      </p>
-      <div class="feature-cta">Find dit testcenter <span class="arrow">›</span></div>
-    </a>
-  </div>
-
-</div>
-
-
-
-
+</section>
 
 <!-- INLINE TEST -->
-<div id="questions-demo">
-<section class="inline-test">
-  <div class="inline-test-inner">
-
-    <h2 class="inline-test-title">Prøv gratis spørgsmål inspireret af den rigtige prøve</h2>
-    <p class="inline-test-subtitle">Se formatet og sværhedsgraden.</p>
-
-    <div class="inline-test-cta-top">
-      <a href="https://civiclearn.com/denmark-pr/checkout.html" class="hero-primary-btn">
-        Fuld adgang · 500+ spørgsmål
-      </a>
+<section class="section quiz" id="questions-demo">
+  <div class="wrap">
+    <div class="quiz-top">
+      <div class="section-head"><span class="kicker" id="v2QuizKicker">Gratis øvelse</span><h2>Prøv gratis spørgsmål inspireret af den rigtige prøve</h2><p>Se formatet og sværhedsgraden.</p></div>
+      <div class="quiz-actions"><a href="https://civiclearn.com/denmark-pr/checkout.html" class="btn btn-ghost">Fuld adgang · 500+ spørgsmål</a></div>
     </div>
-
-    <!-- Progress -->
-    <div class="inline-progress-container">
-      <div class="inline-test-inner">
-        <div id="inline-progress-text"></div>
-        <div class="inline-progressbar-wrapper">
-          <div id="inline-progressbar"></div>
-        </div>
-      </div>
+    <div class="progress">
+      <div id="inline-progress-text"></div>
+      <div class="progress-track"><div id="inline-progressbar"></div></div>
     </div>
-
-    <!-- QUESTIONS (unchanged) -->
-    <div class="inline-test-inner">
-      <div id="inline-test-questions"></div>
-    </div>
-
-
+    <div id="inline-test-questions"></div>
+  </div>
+</section>
 
 <!-- PRICING -->
-<section class="premium-pricing">
-  <div class="pricing-card">
-
-    <div class="pricing-top">
-      <span class="pricing-tag">Premium adgang</span>
+<section class="section pricing-v2" id="pricing">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="kicker">Én enkel pris</span>
+      <h2>Alt inkluderet, for altid</h2>
+      
     </div>
-
-    <div class="pricing-price">
-      <div class="amount">499 kr</div>
-      <div class="subtitle">Engangsbetaling — livstidsadgang</div>
-    </div>
-
-<div class="pricing-divider"></div>
-
-<ul class="feature-list">
-
-  <li>
+    
+    <div class="price-card">
+      <div class="price-left">
+        <span class="price-tag">Premium adgang</span>
+        <div class="price-amount">499 kr<small>én gang</small></div>
+        <p class="price-sub">Engangsbetaling — livstidsadgang</p>
+        
+        
+        <a class="btn btn-primary" href="https://civiclearn.com/denmark-pr/checkout.html">Start nu</a>
+        <p class="price-note">Engangsbetaling. Intet abonnement.</p>
+        <a class="bundle-strip" href="https://civiclearn.com/denmark-pr/checkout.html?plan=bundle">
+<span class="bundle-strip-icon">🎁</span>
+<div class="bundle-strip-body">
+<div class="bundle-strip-headline">+ Prøve i Dansk 3 Træning</div>
+<div class="bundle-strip-sub">Tilføj 10 simulationer med AI-evaluering og karakterer</div>
+</div>
+<div class="bundle-strip-price">
+<div class="bundle-strip-amount">999 kr</div>
+<div class="bundle-strip-save">−399 kr</div>
+</div>
+</a>
+      </div>
+      <div class="price-right">
+        <h3 id="v2Wyg">Det får du</h3>
+        <ul class="checks feature-list">
+          <li>
     800+ spørgsmål baseret på emnerne i medborgerskabsprøven
     <span class="tt-icon">
-      <span class="tt-text">800+ questions based on the Danish residency test topics</span>
-    </span>
-  </li>
-
-  <li>
-    <strong>Spørgsmål fra tidligere officielle prøver</strong>
-    <span class="tt-icon">
-      <span class="tt-text">Questions from past official tests</span>
-    </span>
-  </li>
-
-  <li>
+<span class="tt-text">800+ questions based on the Danish residency test topics</span>
+</span>
+</li>
+          <li>
+<strong>Spørgsmål fra tidligere officielle prøver</strong>
+<span class="tt-icon">
+<span class="tt-text">Questions from past official tests</span>
+</span>
+</li>
+          <li>
     Tosproget – dansk og engelsk
     <span class="tt-icon">
-      <span class="tt-text">Bilingual – Danish and English</span>
-    </span>
-  </li>
-
-  <li>
+<span class="tt-text">Bilingual – Danish and English</span>
+</span>
+</li>
+          <li>
     Tidtagne prøver – som den rigtige test
     <span class="tt-icon">
-      <span class="tt-text">Timed simulations – just like the real test</span>
-    </span>
-  </li>
-
-  <li>
+<span class="tt-text">Timed simulations – just like the real test</span>
+</span>
+</li>
+          <li>
     Hurtige tests til daglig træning
     <span class="tt-icon">
-      <span class="tt-text">Quick tests for daily practice</span>
-    </span>
-  </li>
-
-  <li>
+<span class="tt-text">Quick tests for daily practice</span>
+</span>
+</li>
+          <li>
     Tests efter tema: historie, samfund, kultur...
     <span class="tt-icon">
-      <span class="tt-text">Topic-based tests: history, society, geography, culture and more</span>
-    </span>
-  </li>
-
-  <li>
+<span class="tt-text">Topic-based tests: history, society, geography, culture and more</span>
+</span>
+</li>
+          <li>
     Automatisk udvalgte svære spørgsmål
     <span class="tt-icon">
-      <span class="tt-text">Automatically selected difficult questions</span>
-    </span>
-  </li>
-
-  <li>
-    <strong>100 sværeste spørgsmål</strong> – baseret på rigtige brugeres fejl
+<span class="tt-text">Automatically selected difficult questions</span>
+</span>
+</li>
+          <li>
+<strong>100 sværeste spørgsmål</strong> – baseret på rigtige brugeres fejl
     <span class="tt-icon">
-      <span class="tt-text">100 hardest questions – based on real user mistakes</span>
-    </span>
-  </li>
-
-  <li>
+<span class="tt-text">100 hardest questions – based on real user mistakes</span>
+</span>
+</li>
+          <li>
     Detaljeret statistik og fuldt historik-overblik
     <span class="tt-icon">
-      <span class="tt-text">Detailed statistics and complete progress history</span>
-    </span>
-  </li>
-
-  <li>
+<span class="tt-text">Detailed statistics and complete progress history</span>
+</span>
+</li>
+          <li>
     Oplæsning af spørgsmål og svar
     <span class="tt-icon">
-      <span class="tt-text">Audio reading of questions and answers</span>
-    </span>
-  </li>
-
-  <li>
+<span class="tt-text">Audio reading of questions and answers</span>
+</span>
+</li>
+          <li>
     Integreret studiemateriale (tekst + lyd)
     <span class="tt-icon">
-      <span class="tt-text">Integrated study materials (text + audio)</span>
-    </span>
-  </li>
-
-  <li>
+<span class="tt-text">Integrated study materials (text + audio)</span>
+</span>
+</li>
+          <li>
     Adgang fra computer, tablet og telefon
     <span class="tt-icon">
-      <span class="tt-text">Accessible from computer, tablet, and phone</span>
-    </span>
-  </li>
-  
-<li>
+<span class="tt-text">Accessible from computer, tablet, and phone</span>
+</span>
+</li>
+          <li>
   Daglige tests
   <span class="tt-icon">
-    <span class="tt-text">Daily tests</span>
-  </span>
+<span class="tt-text">Daily tests</span>
+</span>
 </li>
-
-  <li>
+          <li>
     Øjeblikkelig aktivering efter betaling
     <span class="tt-icon">
-      <span class="tt-text">Instant activation after purchase</span>
-    </span>
-  </li>
-
-</ul>
-
-
-    <a class="pricing-cta" href="https://civiclearn.com/denmark-pr/checkout.html">
-      Start nu
-    </a>
-    <!-- Bundle upsell strip — inside card, at bottom -->
-    <a class="bundle-strip" href="https://civiclearn.com/denmark-pr/checkout.html?plan=bundle">
-      <span class="bundle-strip-icon">🎁</span>
-      <div class="bundle-strip-body">
-        <div class="bundle-strip-headline">+ Prøve i Dansk 3 Træning</div>
-        <div class="bundle-strip-sub">Tilføj 10 simulationer med AI-evaluering og karakterer</div>
+<span class="tt-text">Instant activation after purchase</span>
+</span>
+</li>
+        </ul>
       </div>
-      <div class="bundle-strip-price">
-        <div class="bundle-strip-amount">999 kr</div>
-        <div class="bundle-strip-save">−399 kr</div>
-      </div>
-    </a>
-
-
-  </div>
-
-  <div class="pricing-guarantee">
-    Engangsbetaling. Intet abonnement.
+    </div>
   </div>
 </section>
 
 
 
 <!-- TESTIMONIALS -->
-<section class="cl-testimonials">
-  <div class="cl-testimonials-header">
-    <h2>Hvad siger brugerne?</h2>
-    <p>Ægte erfaringer fra kandidater, der har bestået prøven</p>
-  </div>
-
-  <div class="cl-testimonials-grid">
-
-    <div class="cl-testimonial-card">
-      <div class="cl-testimonial-avatar">
-        <img src="/assets/images/avatar2.png" alt="">
-      </div>
-      <p class="cl-testimonial-text">
-        “Prøvesimulationerne gjorde det nemt at forstå niveauet. På dagen følte jeg mig helt klar.”
-      </p>
-      <div class="cl-testimonial-author">Oleg L.</div>
-    </div>
-
-    <div class="cl-testimonial-card">
-      <div class="cl-testimonial-avatar">
-        <img src="/assets/images/avatar1.png" alt="">
-      </div>
-      <p class="cl-testimonial-text">
-        “De svære spørgsmål hjalp mig virkelig med at forbedre mig hurtigt.”
-      </p>
-      <div class="cl-testimonial-author">Marina R.</div>
-    </div>
-
-    <div class="cl-testimonial-card">
-      <div class="cl-testimonial-avatar">
-        <img src="/assets/images/avatar3.png" alt="">
-      </div>
-      <p class="cl-testimonial-text">
-        “Let at bruge, klart og effektivt. Jeg bestod ved første forsøg takket være denne platform.”
-      </p>
-      <div class="cl-testimonial-author">Silvia P.</div>
+<section class="section testi-v2" style="padding-top:56px">
+  <div class="wrap">
+    <div class="section-head center"><span class="kicker">Fra vores brugere</span><h2>Hvad siger brugerne?</h2><p>Ægte erfaringer fra kandidater, der har bestået prøven</p></div>
+    <div class="quotes">
+      <figure class="quote">
+        <span class="stars" aria-hidden="true">★★★★★</span>
+        <p>“Prøvesimulationerne gjorde det nemt at forstå niveauet. På dagen følte jeg mig helt klar.”</p>
+        <figcaption class="quote-by"><img src="/assets/images/avatar2.png" alt="" width="40" height="40">Oleg L.</figcaption>
+      </figure>
+      <figure class="quote">
+        <span class="stars" aria-hidden="true">★★★★★</span>
+        <p>“De svære spørgsmål hjalp mig virkelig med at forbedre mig hurtigt.”</p>
+        <figcaption class="quote-by"><img src="/assets/images/avatar1.png" alt="" width="40" height="40">Marina R.</figcaption>
+      </figure>
+      <figure class="quote">
+        <span class="stars" aria-hidden="true">★★★★★</span>
+        <p>“Let at bruge, klart og effektivt. Jeg bestod ved første forsøg takket være denne platform.”</p>
+        <figcaption class="quote-by"><img src="/assets/images/avatar3.png" alt="" width="40" height="40">Silvia P.</figcaption>
+      </figure>
     </div>
 
   </div>
@@ -612,83 +525,64 @@
 
 
 <!-- FAQ -->
-<section class="cl-faq">
-
-  <div class="section-heading">
-    <div class="section-kicker">Ofte stillede spørgsmål</div>
-    <h2 class="section-title">FAQ</h2>
-  </div>
-
-  <div class="faq-item">
-    <div class="faq-question"><span>Hvor længe varer adgangen?</span></div>
-    <div class="faq-answer">
-      <p>Adgangen er livsvarig. Du betaler kun én gang.</p>
+<section class="section" style="padding-top:0">
+  <div class="wrap faq-grid">
+    <div class="section-head"><span class="kicker">Ofte stillede spørgsmål</span><h2>FAQ</h2><p id="v2FaqMore">Andre spørgsmål? <a href="/kontakt.html">Skriv til os</a>.</p></div>
+    <div class="faq-list">
+      <details><summary>Hvor længe varer adgangen?</summary><p>Adgangen er livsvarig. Du betaler kun én gang.</p></details>
+      <details><summary>Er spørgsmålene de samme som i prøven?</summary><p>Ministeriet offentliggør ikke de rigtige spørgsmål. Vores tests dækker dog temaer, struktur og sværhedsgrad tro mod den rigtige prøve.</p></details>
+      <details><summary>Kan jeg træne på telefonen?</summary><p>Ja. Alt virker direkte i browseren på mobil, tablet og computer.</p></details>
+      <details><summary>Hvordan hjælper platformen mig konkret?</summary><p>Gennem simulationer, tematests, svære spørgsmål og detaljeret statistik.</p></details>
+      <details><summary>Skal jeg installere noget?</summary><p>Nej. Alt fungerer online uden installation.</p></details>
     </div>
   </div>
-
-  <div class="faq-item">
-    <div class="faq-question"><span>Er spørgsmålene de samme som i prøven?</span></div>
-    <div class="faq-answer">
-      <p>Ministeriet offentliggør ikke de rigtige spørgsmål.  
-      Vores tests dækker dog temaer, struktur og sværhedsgrad tro mod den rigtige prøve.</p>
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <div class="faq-question"><span>Kan jeg træne på telefonen?</span></div>
-    <div class="faq-answer">
-      <p>Ja. Alt virker direkte i browseren på mobil, tablet og computer.</p>
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <div class="faq-question"><span>Hvordan hjælper platformen mig konkret?</span></div>
-    <div class="faq-answer">
-      <p>Gennem simulationer, tematests, svære spørgsmål og detaljeret statistik.</p>
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <div class="faq-question"><span>Skal jeg installere noget?</span></div>
-    <div class="faq-answer">
-      <p>Nej. Alt fungerer online uden installation.</p>
-    </div>
-  </div>
-
 </section>
-<section class="home-articles">
-  <h2>Læs vores populære artikler</h2>
-  <div class="home-articles-grid" id="homeArticlesGrid"></div>
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head"><span class="kicker">Læs mere</span><h2>Læs vores populære artikler</h2></div>
+    <div class="home-articles-grid" id="homeArticlesGrid"></div>
+  </div>
 </section>
 
 
 
 <!-- COMPATIBILITY -->
-<section class="compat-section">
-  <div class="compat-inner">
-
-    <h2 class="compat-title">Kompatibel med alle enheder og moderne browsere</h2>
-
-    <div class="compat-grid">
-      <div class="compat-item"><img src="/assets/images/logos/windows.svg"><p>Windows</p></div>
-      <div class="compat-item"><img src="/assets/images/logos/macos.svg"><p>macOS</p></div>
-      <div class="compat-item"><img src="/assets/images/logos/android.svg"><p>Android</p></div>
-      <div class="compat-item"><img src="/assets/images/logos/ios.svg"><p>iPhone / iPad</p></div>
-      <div class="compat-item"><img src="/assets/images/logos/chrome.svg"><p>Chrome</p></div>
-      <div class="compat-item"><img src="/assets/images/logos/safari.svg"><p>Safari</p></div>
-      <div class="compat-item"><img src="/assets/images/logos/firefox.svg"><p>Firefox</p></div>
+<!-- CLOSING CTA -->
+<section class="closing-wrap" style="padding:24px 0 40px">
+  <div class="wrap">
+    <div class="closing">
+      <div>
+        <h2 id="v2ClosingH">Klar til medborgerskabsprøven?</h2>
+        <p id="v2ClosingP">800+ spørgsmål om prøvens emner, spørgsmål fra tidligere prøver og tidsprøvede simulationer. 499 kr, én gang.</p>
+      </div>
+      <a href="https://civiclearn.com/denmark-pr/checkout.html" class="btn btn-primary" id="v2ClosingBtn">Start forberedelsen</a>
     </div>
+  </div>
+</section>
 
+<section style="padding:24px 0 0">
+  <div class="wrap">
+
+    <div class="devices" aria-label="Kompatibel med alle enheder og moderne browsere">
+      <span class="sr-only">Kompatibel med alle enheder og moderne browsere</span>
+      <span><img src="/assets/images/logos/windows.svg" alt="">Windows</span>
+      <span><img src="/assets/images/logos/macos.svg" alt="">macOS</span>
+      <span><img src="/assets/images/logos/android.svg" alt="">Android</span>
+      <span><img src="/assets/images/logos/ios.svg" alt="">iPhone / iPad</span>
+      <span><img src="/assets/images/logos/chrome.svg" alt="">Chrome</span>
+      <span><img src="/assets/images/logos/safari.svg" alt="">Safari</span>
+      <span><img src="/assets/images/logos/firefox.svg" alt="">Firefox</span>
+    </div>
   </div>
 </section>
 
 
 
 <!-- FOOTER -->
-<footer class="site-footer">
-  <div class="footer-inner">
+<footer class="foot">
+  <div class="wrap">
     <div>© <span id="footer-year"></span> Medborgerskabsprove.dk</div>
-    <div class="footer-links">
+    <nav>
       <a href="https://civiclearn.com/insights">Insights</a>
       <a href="/test-gratis.html">Gratis test</a>
       <a href="/artikler/index.html">Artikler</a>
@@ -697,11 +591,12 @@
       <a href="/privatlivspolitik.html">Privatliv</a>
       <a href="/handelsbetingelser.html">Handelsbetingelser</a>
       <a href="/refusioner.html">Refusioner</a>
-    </div>
+    </nav>
   </div>
 </footer>
 
 <script src="/assets/js/hometest.js"></script>
+<script src="https://civiclearn.com/assets/js/presale-quiz.js?v=1"></script>
 <script>
 document.querySelectorAll(".faq-item").forEach(item => {
   const q = item.querySelector(".faq-question");
@@ -883,5 +778,22 @@ document.addEventListener("DOMContentLoaded", updateExamStatus);
 </script>
 
 
+<!-- Mobile sticky CTA (appears once the hero button scrolls away, hides over the quiz and pricing) -->
+<div class="sticky-cta" id="sticky-cta" aria-hidden="true">
+  <span id="v2Sticky"><b>499 kr, én gang</b>Livstidsadgang</span>
+  <a href="https://civiclearn.com/denmark-pr/checkout.html" class="btn btn-primary" tabindex="-1" id="v2StickyBtn">Kom i gang</a>
+</div>
+
+<script>
+(function(){
+  var s=document.getElementById('sticky-cta'), h=document.querySelector('.hero-ctas .btn-primary'), p=document.getElementById('pricing'), q=document.getElementById('questions-demo');
+  if(!('IntersectionObserver' in window)||!s||!h) return;
+  var heroGone=false, priceVisible=false, quizVisible=false;
+  function upd(){var on=heroGone&&!priceVisible&&!quizVisible;s.classList.toggle('show',on);s.setAttribute('aria-hidden',on?'false':'true');}
+  new IntersectionObserver(function(e){heroGone=!e[0].isIntersecting&&e[0].boundingClientRect.top<0;upd();}).observe(h);
+  if(p) new IntersectionObserver(function(e){priceVisible=e[0].isIntersecting;upd();},{threshold:.15}).observe(p);
+  if(q) new IntersectionObserver(function(e){quizVisible=e[0].isIntersecting;upd();},{threshold:.05}).observe(q);
+})();
+</script>
 </body>
 </html>
